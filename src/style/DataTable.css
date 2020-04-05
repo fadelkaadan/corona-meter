@@ -1,0 +1,33 @@
+.stats {
+    overflow: auto;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+table, th, td {
+    border: 1px solid black;
+}
+
+thead {
+    display: table-header-group;
+}
+
+tr {
+    display: table-row;
+}
+
+th {
+    background-color: #EDEDED;
+    position: sticky;
+    top: -2px;
+}
+
+th, td {
+    padding: 10px;
+}
+
+td:not(:first-child) {
+    text-align: right;
+}

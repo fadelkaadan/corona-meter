@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+    box-sizing: inherit;
+    font-family: Roboto,Arial,sans-serif
+}
+
+.main {
+    background-color: #000000;
+    color:#f1f1f1;
+    text-align: center;
+    height: 768px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+.main h1 {
+    font-size: 35px;
+    padding: 20px;
+    border-bottom: 1px solid #f1f1f1;
+}
