@@ -21,14 +21,14 @@ class Nav extends Component {
 				<div>
 				<nav>
 					<ul>
-						<li><Link to="/">Home</Link></li>
+						<li><Link to="/corona-meter">Home</Link></li>
 						<li><Link to="/about">About</Link></li>
 						<li><Link to="/news">News</Link></li>
 					</ul>
 				</nav>
 
 				<Switch>
-					<Route exact path="/">
+					<Route exact path="/corona-meter">
 						<Home/>
 					</Route>
 					<Route path="/about">
