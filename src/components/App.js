@@ -1,19 +1,17 @@
 import React from 'react'
 
-import GlobalStats from './GlobalStats'
-import DataTable from './DataTable'
+import Nav from './Nav'
 
 import '../style/App.css';
 
 class App extends React.Component {
-    render() {
-        return (
-            <div className="App">
-                <GlobalStats/>
-                <DataTable/>
-            </div>
-        )
-    }
+	render() {
+		return (
+			<div className="App">
+				<Nav/>
+			</div>
+		)
+	}
 }
 
 export default App

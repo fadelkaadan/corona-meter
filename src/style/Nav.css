@@ -1,0 +1,19 @@
+nav {
+    text-align: center;
+    background-color: rgb(39, 39, 39);
+    padding: 10px 0;
+}
+
+nav li {
+    display: inline;
+    border: 1px solid black;
+    padding: 9px 50px;
+}
+nav li:hover {
+    background-color: rgb(43, 43, 43);
+}
+
+nav li a {
+    text-decoration: none;
+    color: white;
+}

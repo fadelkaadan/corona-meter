@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { fetchGlobalData } from '../api/coronaAPI'
-import numberFormater from '../util/numberFomater'
+import numberFormater from '../utils/numberFomater'
 import '../style/GlobalStats.css';
 
 class GlobalStats extends React.Component {

@@ -48,8 +48,10 @@ class DataTable extends React.Component {
                             <th>Total Recovered</th>
                             <th>Active Cases</th>
                             <th>Critical</th>
-                            <th>Tot Cases/1M pop</th>
-                            <th>Tot Deaths/1M pop</th>
+                            <th>Cases/1M pop</th>
+                            <th>Deaths/1M pop</th>
+                            <th>Total Tests</th>
+                            <th>Tests/1M pop</th>
                         </tr>
                     </thead>
                 <tbody>
