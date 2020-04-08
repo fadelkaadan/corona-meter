@@ -1,9 +1,9 @@
 import React from 'react'
 
-import DataTableRow from './DataTableRow'
+import DataTableRow from '../DataTableRow'
 
-import { fetchCountriesData } from '../api/coronaAPI'
-import '../style/DataTable.css';
+import { fetchCountriesData } from '../../api/coronaAPI'
+import './DataTable.css';
 
 class DataTable extends React.Component {
 

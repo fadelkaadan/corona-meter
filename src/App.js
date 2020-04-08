@@ -1,14 +1,14 @@
 import React from 'react'
 
-import Nav from './Nav'
+import Routes from './pages/routes'
 
-import '../style/App.css';
+import './App.css';
 
 class App extends React.Component {
 	render() {
 		return (
 			<div className="App">
-				<Nav/>
+				<Routes/>
 			</div>
 		)
 	}

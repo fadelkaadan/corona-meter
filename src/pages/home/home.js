@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 
-import GlobalStats from './GlobalStats'
-import DataTable from './DataTable'
+import GlobalStats from '../../components/GlobalStats'
+import DataTable from '../../components/DataTable'
 
-import '../style/Home.css'
 
 class Home extends Component {
     componentDidMount() {
@@ -12,7 +11,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
+            <div className="home">
                 <GlobalStats/>
                 <DataTable/>
             </div>

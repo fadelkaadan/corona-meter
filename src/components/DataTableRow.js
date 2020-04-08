@@ -1,7 +1,6 @@
 import React from 'react'
 
 import formatNumber from '../utils/numberFomater'
-import '../style/App.css';
 
 class DataTableRow extends React.Component {
 
