@@ -2,6 +2,7 @@ import React from 'react'
 
 import { fetchGlobalData } from '../../api/coronaAPI'
 import numberFormater from '../../utils/numberFomater'
+
 import './GlobalStats.css';
 
 class GlobalStats extends React.Component {
@@ -28,14 +29,11 @@ class GlobalStats extends React.Component {
         const { cases, deaths, recovered } = this.state
 
         return (
-            <section className="main">
-                <h1>Corona-meter</h1>
-                <div className="global-stats">
-                    <h3 id="totalCases">Cases: {cases}</h3>
-                    <h3 id="totalDeaths">Deaths: {deaths}</h3>
-                    <h3 id="totalRecovered">Recovered: {recovered}</h3>
-                </div>
-            </section>   
+            <div className="global-stats">
+                <h3 id="totalCases">Cases: {cases}</h3>
+                <h3 id="totalDeaths">Deaths: {deaths}</h3>
+                <h3 id="totalRecovered">Recovered: {recovered}</h3>
+            </div>
         )
     }
 }

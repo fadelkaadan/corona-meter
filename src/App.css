@@ -1,8 +1,16 @@
+@font-face { font-family: SourceSansPro-Light; 
+    src: url('./resources/Source_Sans_Pro/SourceSansPro-Light.ttf'); } 
+
 *,
 *::after,
 *::before {
 	margin: 0;
 	padding: 0;
     box-sizing: inherit;
-    font-family: Roboto, Arial, sans-serif
+    font-family: SourceSansPro-Light, Arial, sans-serif;
+    background-color: #F0F0F7;
+}
+
+.app {
+    
 }

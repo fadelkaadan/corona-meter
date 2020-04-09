@@ -5,7 +5,7 @@ import {
     Route,
   } from "react-router-dom";
 
-import Home from './home/home'
+import Home from './home'
 import About from './about'
 import News from './news'
 import NotFound from './notFound'

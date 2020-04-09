@@ -1,0 +1,15 @@
+.search {
+    box-sizing: border-box;
+    margin: 15px 0;
+}
+.search-bar {
+    padding: 10px 10px;
+    border: 0px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 0px 30px #f3f3f3;
+}
+.search-bar:hover, .search-bar:focus {
+    outline: none;
+
+}

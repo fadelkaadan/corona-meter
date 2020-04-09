@@ -1,12 +1,23 @@
 .stats {
     overflow: auto;
+    grid-column: 2 / 6;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    background-color: white;
+}
+
+.stats-title {
+    background-color: #fff;
 }
 
 table {
     border-collapse: collapse;
+    background-color: #fff;
 }
 table, th, td {
-    border: 1px solid black;
+    border-bottom: 1px solid #F1F1F3;
+    background-color: #fff;
 }
 
 thead {
@@ -18,9 +29,13 @@ tr {
 }
 
 th {
-    background-color: #EDEDED;
+    background-color: #F0F0F7;
     position: sticky;
     top: -2px;
+}
+
+th:nth-child(1) {
+    text-align: left;
 }
 
 th, td {
@@ -28,5 +43,5 @@ th, td {
 }
 
 td:not(:first-child) {
-    text-align: right;
+    text-align: center;
 }

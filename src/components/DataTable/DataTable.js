@@ -1,6 +1,7 @@
 import React from 'react'
 
 import DataTableRow from '../DataTableRow'
+import Search from '../Search'
 
 import { fetchCountriesData } from '../../api/coronaAPI'
 import './DataTable.css';
@@ -36,7 +37,9 @@ class DataTable extends React.Component {
 
     render() {
         return (
-            <section className="stats">
+            <div className="stats">
+                <h3 className="stats-title">Countries affected by Covid-19</h3>
+                <Search />
                 <table id="stats-table">
                     <thead>
                         <tr>
@@ -46,12 +49,7 @@ class DataTable extends React.Component {
                             <th>Total Deaths</th>
                             <th>New Deaths</th>
                             <th>Total Recovered</th>
-                            <th>Active Cases</th>
-                            <th>Critical</th>
-                            <th>Cases/1M pop</th>
-                            <th>Deaths/1M pop</th>
                             <th>Total Tests</th>
-                            <th>Tests/1M pop</th>
                         </tr>
                     </thead>
                 <tbody>
@@ -60,7 +58,7 @@ class DataTable extends React.Component {
                         this.addRows()}
                 </tbody>
                 </table>
-            </section>
+            </div>
         )
     }
 }
