@@ -1,41 +1,27 @@
 import React from 'react'
 
-import { fetchGlobalData } from '../../api/coronaAPI'
-import numberFormater from '../../utils/numberFomater'
-
 import './GlobalStats.css';
 
-class GlobalStats extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            cases: '',
-            deaths: '',
-            recovered: ''
-        }
-    }
+// import { FaArrowDown } from "react-icons/fa";
 
-    componentDidMount() {
-        fetchGlobalData().then((response) => {
-            this.setState({
-                cases: numberFormater(response.cases),
-                deaths: numberFormater(response.deaths),
-                recovered: numberFormater(response.recovered)
-            })
-        })
-    }
+const GlobalStats = (props) => {
+    const { counterName ,count, classProp, arrow } = props
 
-    render() {
-        const { cases, deaths, recovered } = this.state
-
-        return (
-            <div className="global-stats">
-                <h3 id="totalCases">Cases: {cases}</h3>
-                <h3 id="totalDeaths">Deaths: {deaths}</h3>
-                <h3 id="totalRecovered">Recovered: {recovered}</h3>
+    return (
+        <div className="global-stats">
+            <div className="container">
+                <p className="counter-name">{counterName}</p>
+                <h3 className="count">{count}</h3>
+                <p className={classProp}>
+                    {arrow}13%
+                </p>
             </div>
-        )
-    }
+            
+            <div className="chart">
+                
+            </div>
+        </div>
+    )
 }
 
 export default GlobalStats

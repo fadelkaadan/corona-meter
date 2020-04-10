@@ -1,5 +1,18 @@
-@font-face { font-family: SourceSansPro-Light; 
-    src: url('./resources/Source_Sans_Pro/SourceSansPro-Light.ttf'); } 
+@font-face {
+    font-family: SourceSansPro-Light; 
+    src: url('./resources/Source_Sans_Pro/SourceSansPro-Light.ttf'); }
+@font-face {
+    font-family: SourceSansPro-Regular;
+    src: url('./resources/Source_Sans_Pro/SourceSansPro-Regular.ttf');
+}
+@font-face {
+    font-family: SourceSansPro-Bold;
+    src: url('./resources/Source_Sans_Pro/SourceSansPro-Bold.ttf');
+}
+@font-face {
+    font-family: SourceSansPro-SemiBold;
+    src: url('./resources/Source_Sans_Pro/SourceSansPro-SemiBold.ttf');
+}
 
 *,
 *::after,

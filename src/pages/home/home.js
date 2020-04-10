@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Header from '../../components/Header'
-import GlobalStats from '../../components/GlobalStats'
+import GlobalStatsDashboard from '../../components/GlobalStatsDashboard'
 import DataTable from '../../components/DataTable'
 
 import './Home.css'
@@ -16,7 +16,7 @@ class Home extends Component {
         return (
             <div className="home">
                 <Header/>
-                <GlobalStats/>
+                <GlobalStatsDashboard/>
                 <DataTable/>
             </div>
         )

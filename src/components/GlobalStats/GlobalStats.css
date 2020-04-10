@@ -1,16 +1,41 @@
-.main {
-    background-color: #000000;
-    color:#f1f1f1;
-}
-.main h1 {
-    font-size: 35px;
-    padding: 20px;
-    border-bottom: 1px solid #f1f1f1;
-}
-
 .global-stats {
+    padding: 0px 15px 15px 15px;
+    margin: 10px 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+.global-stats * {
+    background-color: #fff;
+}
+.container {
+}
+.counter-name {
+    color: #43425D;
+    font-family: SourceSansPro-Regular;
+    font-size: 15px;
+    line-height: 5;
+}
+.count {
+    font-family: SourceSansPro-SemiBold;
     font-size: 25px;
-    line-height: 80px;
-    grid-column: 1 / -1;
-    justify-self: center;
+    line-height: 1.5;
+}
+.trend {
+    color: #FF4141;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    line-height: 1.5;
+}
+.trend-up {
+    color: #3CC480;
+}
+.chart {
+    background-image: url(/corona-meter/static/media/chart.b1900077.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100px;
+    align-self: flex-end;
+    height: 35px;
 }

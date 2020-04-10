@@ -1,6 +1,6 @@
 .stats {
     overflow: auto;
-    grid-column: 2 / 6;
+    grid-column: table;
     display: flex;
     flex-direction: column;
     padding: 25px;
@@ -9,6 +9,7 @@
 
 .stats-title {
     background-color: #fff;
+    color: #4D4F5C;
 }
 
 table {
@@ -30,6 +31,7 @@ tr {
 
 th {
     background-color: #F0F0F7;
+    color: #A3A6B4;
     position: sticky;
     top: -2px;
 }
@@ -40,6 +42,10 @@ th:nth-child(1) {
 
 th, td {
     padding: 10px;
+}
+
+td {
+    color: #4D4F5C;
 }
 
 td:not(:first-child) {

@@ -15,14 +15,14 @@ const Routes = () => {
 		<Router>
 			<Switch>
 				<Route exact path="/corona-meter" component={Home} />
-				<Route exact path="/news" component={News}/>
-				<Route exact path="/health-organizations">
+				<Route exact path="/corona-meter/news" component={News}/>
+				<Route exact path="/corona-meter/health-organizations">
 					{/* <HealthOrgs/> */}
 				</Route>
-				<Route path="/info">
+				<Route path="/corona-meter/info">
 					{/* <Info/> */}
 				</Route>
-				<Route path="/about" component={About}/>
+				<Route path="/corona-meter/about" component={About}/>
 
 				{/* PAGE NOT FOUND 404 */}
 				<Route path="*" component={NotFound}/>
