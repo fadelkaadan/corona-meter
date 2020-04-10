@@ -1,14 +1,15 @@
-.global-stats {
+.stats-box {
     padding: 0px 15px 15px 15px;
     margin: 10px 0;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
 }
-.global-stats * {
+.stats-box * {
     background-color: #fff;
 }
 .container {
+    
 }
 .counter-name {
     color: #43425D;
@@ -22,14 +23,19 @@
     line-height: 1.5;
 }
 .trend {
-    color: #FF4141;
     display: flex;
     align-items: center;
     font-size: 11px;
     line-height: 1.5;
 }
+.tend-icon {
+    margin-right: 2px;
+}
 .trend-up {
     color: #3CC480;
+}
+.trend-down {
+    color: #FF4141;
 }
 .chart {
     background-image: url(/corona-meter/static/media/chart.b1900077.png);

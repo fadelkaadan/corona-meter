@@ -1,19 +1,17 @@
 import React from 'react'
 
-import './GlobalStats.css';
+import './StatsBox.css';
 
-// import { FaArrowDown } from "react-icons/fa";
-
-const GlobalStats = (props) => {
+const StatsBox = (props) => {
     const { counterName ,count, classProp, arrow } = props
 
     return (
-        <div className="global-stats">
+        <div className="stats-box">
             <div className="container">
                 <p className="counter-name">{counterName}</p>
                 <h3 className="count">{count}</h3>
                 <p className={classProp}>
-                    {arrow}13%
+                    {arrow}{props.growthRate}
                 </p>
             </div>
             
@@ -24,4 +22,4 @@ const GlobalStats = (props) => {
     )
 }
 
-export default GlobalStats
+export default StatsBox

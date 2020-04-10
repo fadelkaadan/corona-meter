@@ -8,3 +8,7 @@ export const fetchGlobalData = () => {
 export const fetchCountriesData = () => {
     return track.countries();
 }
+
+export const fetchYesterdayGlobalData = () => {
+    return track.yesterday();
+}
