@@ -76,11 +76,7 @@ class GlobalStatsDashboard extends Component {
 
     render() {
         const { cases, deaths, recovered } = this.state.todaysGlobalData
-        try {
-            console.log(this.state.casesGrowthRate)
-        } catch(e) {
-            console.log('error')
-        }
+        
         return (
             <div className="global-stats-dashboard">
                 <GlobalStats counterName="Total Cases"

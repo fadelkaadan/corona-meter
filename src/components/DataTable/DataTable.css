@@ -12,11 +12,11 @@
     color: #4D4F5C;
 }
 
-table {
+.stats-table {
     border-collapse: collapse;
     background-color: #fff;
 }
-table, th, td {
+.stats-table, th, td {
     border-bottom: 1px solid #F1F1F3;
     background-color: #fff;
 }
@@ -34,6 +34,7 @@ th {
     color: #A3A6B4;
     position: sticky;
     top: -2px;
+    cursor: pointer;
 }
 
 th:nth-child(1) {

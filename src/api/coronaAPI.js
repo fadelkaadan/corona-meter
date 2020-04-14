@@ -5,8 +5,8 @@ export const fetchGlobalData = () => {
     return track.all();
 }
 
-export const fetchCountriesData = () => {
-    return track.countries();
+export const fetchCountriesData = (sortedBy) => {
+    return track.countries(null, sortedBy);
 }
 
 export const fetchYesterdayGlobalData = () => {
