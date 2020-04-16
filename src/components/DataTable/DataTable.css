@@ -1,4 +1,6 @@
 .stats {
+    --row-on-focus: #ffe8e8;
+
     overflow: auto;
     grid-column: table;
     display: flex;
@@ -27,6 +29,10 @@ thead {
 
 tr {
     display: table-row;
+    background-color: #fff;
+}
+tr:hover {
+    background-color: var(--row-on-focus);
 }
 
 th {
@@ -47,6 +53,7 @@ th, td {
 
 td {
     color: #4D4F5C;
+    background-color: transparent;
 }
 
 td:not(:first-child) {

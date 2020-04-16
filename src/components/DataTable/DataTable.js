@@ -16,37 +16,68 @@ class DataTable extends React.Component {
         super(props)
         this.state = {
             isFetching: false,
-            data: []
+            data: [],
+            filteredData: [],
+            searchInputValue: ''
         }
 
         this.getSortedDataBy = this.getSortedDataBy.bind(this)
         this.addRows = this.addRows.bind(this)
+        this.handleInputChange = this.handleInputChange.bind(this)
+        this.handleSearch = this.handleSearch.bind(this)
     }
 
     componentDidMount() {
         this.setState({ isFetching: true })
         this.getSortedDataBy('cases')
     }
+
     getSortedDataBy(sortedBy) {
         fetchCountriesData(sortedBy).then((response) => {
             this.setState({
                 data: response,
                 isFetching: false
             })
+        }).then(() => {
+            this.setState({ filteredData: this.state.data })
+            console.log(this.state.filteredData)
         })
     }
 
-    addRows = () => {    
+    addRows() {
+        // when user types in search bar
+        if (this.state.searchInputValue !== '') {
+            return this.state.filteredData.map((element, index) => {
+                return <tr key={index}><DataTableRow row={element}/></tr>
+            })
+        }
+        // return all data
         return this.state.data.map((element, index) => {
             return <tr key={index}><DataTableRow row={element}/></tr>
         })
+    }
+
+    handleInputChange(searchInputValue) {
+        this.setState({ searchInputValue })
+        this.handleSearch(searchInputValue)
+    }
+
+    handleSearch(searchInput) {
+        if (this.state.searchInput !== '') {
+            const filtered = this.state.data.filter((element) => {
+                const lc = element.country.toLowerCase()
+                const filter = this.state.searchInputValue.toLowerCase()
+                return lc.startsWith(filter);
+            })
+            this.setState({ filteredData: filtered })
+        }
     }
 
     render() {
         return (
             <div className="stats">
                 <h3 className="stats-title">Countries affected by Covid-19</h3>
-                <Search />
+                <Search handleSearchChange={this.handleInputChange} inputValue={this.state.searchInputValue}/>
                 <table className="stats-table sortable">
                     <thead>
                         <tr>
