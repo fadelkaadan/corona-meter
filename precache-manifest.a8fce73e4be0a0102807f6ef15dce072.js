@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a42a0d96450d215bad8c9b6068b989f9",
+    "revision": "ce46b68c04798b0939b360b77c4cc491",
     "url": "/corona-meter/index.html"
   },
   {
-    "revision": "8c27137d9e1005fc645e",
+    "revision": "300e1ccf95061e1fb4c1",
     "url": "/corona-meter/static/css/main.c54a99a8.chunk.css"
   },
   {
-    "revision": "b27ab8beaf8318e1f09b",
-    "url": "/corona-meter/static/js/2.a6ad78c0.chunk.js"
+    "revision": "e3c160fddabb073f2ce8",
+    "url": "/corona-meter/static/js/2.7f4114bb.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/corona-meter/static/js/2.a6ad78c0.chunk.js.LICENSE.txt"
+    "url": "/corona-meter/static/js/2.7f4114bb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8c27137d9e1005fc645e",
-    "url": "/corona-meter/static/js/main.ad3e870b.chunk.js"
+    "revision": "300e1ccf95061e1fb4c1",
+    "url": "/corona-meter/static/js/main.84c7f080.chunk.js"
   },
   {
     "revision": "a310c1e08b1ae5d12c89",
