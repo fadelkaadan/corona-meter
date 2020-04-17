@@ -8,7 +8,3 @@ export const fetchGlobalData = () => {
 export const fetchCountriesData = (sortedBy) => {
     return track.countries(null, sortedBy);
 }
-
-export const fetchYesterdayGlobalData = () => {
-    return track.yesterday();
-}

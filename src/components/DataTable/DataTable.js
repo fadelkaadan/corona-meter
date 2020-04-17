@@ -40,7 +40,6 @@ class DataTable extends React.Component {
             })
         }).then(() => {
             this.setState({ filteredData: this.state.data })
-            console.log(this.state.filteredData)
         })
     }
 
