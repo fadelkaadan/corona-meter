@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/corona-meter/static/css/main.b6074a96.chunk.css",
-    "main.js": "/corona-meter/static/js/main.84c7f080.chunk.js",
-    "main.js.map": "/corona-meter/static/js/main.84c7f080.chunk.js.map",
+    "main.js": "/corona-meter/static/js/main.12a02211.chunk.js",
+    "main.js.map": "/corona-meter/static/js/main.12a02211.chunk.js.map",
     "runtime-main.js": "/corona-meter/static/js/runtime-main.6678e17d.js",
     "runtime-main.js.map": "/corona-meter/static/js/runtime-main.6678e17d.js.map",
     "static/js/2.7f4114bb.chunk.js": "/corona-meter/static/js/2.7f4114bb.chunk.js",
     "static/js/2.7f4114bb.chunk.js.map": "/corona-meter/static/js/2.7f4114bb.chunk.js.map",
     "index.html": "/corona-meter/index.html",
-    "precache-manifest.2a1ed4638e055d546562bfa2dc903703.js": "/corona-meter/precache-manifest.2a1ed4638e055d546562bfa2dc903703.js",
+    "precache-manifest.9759b148e9b7e97bcaad1232fd129634.js": "/corona-meter/precache-manifest.9759b148e9b7e97bcaad1232fd129634.js",
     "service-worker.js": "/corona-meter/service-worker.js",
     "static/css/main.b6074a96.chunk.css.map": "/corona-meter/static/css/main.b6074a96.chunk.css.map",
     "static/js/2.7f4114bb.chunk.js.LICENSE.txt": "/corona-meter/static/js/2.7f4114bb.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.6678e17d.js",
     "static/js/2.7f4114bb.chunk.js",
     "static/css/main.b6074a96.chunk.css",
-    "static/js/main.84c7f080.chunk.js"
+    "static/js/main.12a02211.chunk.js"
   ]
 }
