@@ -5,7 +5,7 @@ import DataTableRow from '../DataTableRow'
 import Search from '../Search'
 
 // utils
-import { fetchCountriesData } from '../../api/coronaAPI'
+import { fetchCountriesDataBy } from '../../api/coronaAPI'
 
 // styling
 import './DataTable.css';
@@ -15,9 +15,9 @@ class DataTable extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            isFetching: false,
             data: [],
             filteredData: [],
+            isFetching: false,
             searchInputValue: ''
         }
 
@@ -32,11 +32,11 @@ class DataTable extends React.Component {
         this.getSortedDataBy('cases')
     }
 
-    getSortedDataBy(sortedBy) {
-        fetchCountriesData(sortedBy).then((response) => {
+    getSortedDataBy(preference) {
+        fetchCountriesDataBy(preference).then((response) => {
             this.setState({
-                data: response,
-                isFetching: false
+                isFetching: false,
+                data: response
             })
         }).then(() => {
             this.setState({ filteredData: this.state.data })
@@ -63,8 +63,8 @@ class DataTable extends React.Component {
 
     handleSearch(searchInput) {
         if (this.state.searchInput !== '') {
-            const filtered = this.state.data.filter((element) => {
-                const lc = element.country.toLowerCase()
+            const filtered = this.state.data.filter((row) => {
+                const lc = row.country.toLowerCase()
                 const filter = this.state.searchInputValue.toLowerCase()
                 return lc.startsWith(filter);
             })
@@ -105,7 +105,7 @@ class DataTable extends React.Component {
                     </thead>
                 <tbody>
                     {this.state.isFetching ?
-                        <tr><td>'Fetching data...'</td></tr> :
+                        <tr><td>Loading</td></tr> :
                         this.addRows()}
                 </tbody>
                 </table>

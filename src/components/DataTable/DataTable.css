@@ -1,5 +1,6 @@
 .stats {
     --row-on-focus: #ffe8e8;
+    --header-color: #F0F0F7;
 
     overflow: auto;
     grid-column: table;
@@ -36,7 +37,7 @@ tr:hover {
 }
 
 th {
-    background-color: #F0F0F7;
+    background-color: var(--header-color);
     color: #A3A6B4;
     position: sticky;
     top: -2px;

@@ -14,6 +14,7 @@ class DataTableRow extends React.Component {
 			&& key !== 'casesPerOneMillion'
 			&& key !== 'deathsPerOneMillion'
 			&& key !== 'testsPerOneMillion'
+			&& key !== 'continent'
 			)
 		.map((key, index) => {
 			return <td key={key}>{formatNumber(this.props.row[key])}</td>

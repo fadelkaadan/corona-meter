@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 
+// api
 import { fetchGlobalData } from '../../api/coronaAPI'
 
 // utils
 import numberFormater from '../../utils/numberFomater'
 
 //components
-import GlobalStats from '../StatsBox'
+import StatsBox from '../StatsBox'
 
 // style
 import './GlobalStatsDashboard.css'
@@ -16,30 +17,30 @@ class GlobalStatsDashboard extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            todaysGlobalData: {}
+            data: {}
         }
     }
 
     componentDidMount() {
         fetchGlobalData().then((response) => {
             this.setState({
-                todaysGlobalData: response,
+                data: response,
             })
         })
     }
 
     render() {
-        const { cases, deaths, recovered } = this.state.todaysGlobalData
-        
+        const { cases, deaths, recovered } = this.state.data
+
         return (
             <div className="global-stats-dashboard">
-                <GlobalStats counterName="Total Cases"
+                <StatsBox counterName="Total Cases"
                             count={numberFormater(cases)}
                             />
-                <GlobalStats counterName="Total Deaths"
+                <StatsBox counterName="Total Deaths"
                             count={numberFormater(deaths)}
                             />
-                <GlobalStats counterName="Total Recovered"
+                <StatsBox counterName="Total Recovered"
                             count={numberFormater(recovered)}
                             />
             </div>
