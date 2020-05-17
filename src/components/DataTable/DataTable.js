@@ -1,8 +1,8 @@
 import React from 'react'
 
 // components
-import DataTableRow from '../DataTableRow'
-import Search from '../Search'
+import DataTableRow from './DataTableRow'
+import Search from './Search'
 
 // utils
 import { fetchCountriesDataBy } from '../../api/coronaAPI'

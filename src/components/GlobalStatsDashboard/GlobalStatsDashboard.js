@@ -7,7 +7,7 @@ import { fetchGlobalData } from '../../api/coronaAPI'
 import numberFormater from '../../utils/numberFomater'
 
 //components
-import StatsBox from '../StatsBox'
+import StatsBox from './StatsBox'
 
 // style
 import './GlobalStatsDashboard.css'
