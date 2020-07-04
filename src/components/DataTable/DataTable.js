@@ -62,11 +62,14 @@ class DataTable extends React.Component {
     }
 
     handleSearch(searchInput) {
-        if (this.state.searchInput !== '') {
+        if (searchInput.length > 0) {
             const filtered = this.state.data.filter((row) => {
                 const lc = row.country.toLowerCase()
-                const filter = this.state.searchInputValue.toLowerCase()
-                return lc.startsWith(filter);
+                const filter = searchInput.toLowerCase()
+                if (searchInput.length < 2)
+                    return lc.startsWith(filter);
+                else
+                    return lc.includes(filter);
             })
             this.setState({ filteredData: filtered })
         }
