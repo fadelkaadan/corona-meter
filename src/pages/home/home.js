@@ -1,26 +1,21 @@
-import React, { Component } from 'react'
+import React, { useEffect } from "react";
+import Header from "../../components/Header";
+import GlobalStatsDashboard from "../../components/GlobalStatsDashboard";
+import DataTable from "../../components/DataTable";
+import "./Home.css";
 
-import Header from '../../components/Header'
-import GlobalStatsDashboard from '../../components/GlobalStatsDashboard'
-import DataTable from '../../components/DataTable'
+const Home = () => {
+    useEffect(() => {
+        document.title = "Home";
+    }, []);
 
-import './Home.css'
+    return (
+        <div className="home">
+            <Header />
+            <GlobalStatsDashboard />
+            <DataTable />
+        </div>
+    );
+};
 
-
-class Home extends Component {
-    componentDidMount() {
-        document.title = 'Home'
-    }
-
-    render() {
-        return (
-            <div className="home">
-                <Header/>
-                <GlobalStatsDashboard/>
-                <DataTable/>
-            </div>
-        )
-    }
-}
-
-export default Home
+export default Home;

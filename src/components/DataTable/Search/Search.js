@@ -1,35 +1,26 @@
-import React, { Component } from 'react'
-
+import React from "react";
 import { FaSearch } from "react-icons/fa";
+import "./Search.css";
 
-import './Search.css'
+const Search = ({ handleSearchChange, inputValue }) => {
+    const handleInputChange = (e) => {
+        handleSearchChange(e.target.value);
+    };
 
-class Search extends Component {
-    constructor(props) {
-        super(props)
+    return (
+        <div className="search">
+            <span className="search-icon">
+                <FaSearch className="search-icon" />
+            </span>
+            <input
+                onChange={handleInputChange}
+                value={inputValue}
+                placeholder="Seach by country..."
+                className="search-bar"
+                type="text"
+            />
+        </div>
+    );
+};
 
-        this.handleInputChange = this.handleInputChange.bind(this)
-    }
-
-    handleInputChange(e) {
-        this.props.handleSearchChange(e.target.value)
-    }
-
-    render() {
-        return (
-            <div className="search">
-                <span className="search-icon">
-                    <FaSearch className="search-icon"/>
-                </span>
-                <input onChange={this.handleInputChange}
-                    value={this.props.inputValue}
-                    placeholder="Seach by country..."
-                    className="search-bar"
-                    type="text"
-                />
-            </div>
-        )
-    }
-}
-
-export default Search
+export default Search;

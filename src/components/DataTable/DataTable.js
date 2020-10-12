@@ -1,120 +1,111 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from "react";
+import DataTableRow from "./DataTableRow";
+import Search from "./Search";
+import { fetchCountriesDataBy } from "../../api/coronaAPI";
+import "./DataTable.css";
 
-// components
-import DataTableRow from './DataTableRow'
-import Search from './Search'
+const DataTable = () => {
+    const [data, setData] = useState([]);
+    const [filteredData, setFilteredData] = useState([]);
+    const [isFetching, setIsFetching] = useState(false);
+    const [searchInputValue, setSearchInputValue] = useState("");
 
-// utils
-import { fetchCountriesDataBy } from '../../api/coronaAPI'
-
-// styling
-import './DataTable.css';
-
-class DataTable extends React.Component {
-
-    constructor(props) {
-        super(props)
-        this.state = {
-            data: [],
-            filteredData: [],
-            isFetching: false,
-            searchInputValue: ''
-        }
-
-        this.getSortedDataBy = this.getSortedDataBy.bind(this)
-        this.addRows = this.addRows.bind(this)
-        this.handleInputChange = this.handleInputChange.bind(this)
-        this.handleSearch = this.handleSearch.bind(this)
-    }
-
-    componentDidMount() {
-        this.setState({ isFetching: true })
-        this.getSortedDataBy('cases')
-    }
-
-    getSortedDataBy(preference) {
-        fetchCountriesDataBy(preference).then((response) => {
-            this.setState({
-                isFetching: false,
-                data: response
+    const getSortedDataBy = (preference) => {
+        fetchCountriesDataBy(preference)
+            .then((response) => {
+                setIsFetching(false);
+                setData(response);
             })
-        }).then(() => {
-            this.setState({ filteredData: this.state.data })
-        })
-    }
+            .then(() => {
+                setFilteredData(data);
+            });
+    };
 
-    addRows() {
+    const addRows = () => {
         // when user types in search bar
-        if (this.state.searchInputValue !== '') {
-            return this.state.filteredData.map((element, index) => {
-                return <tr key={index}><DataTableRow row={element}/></tr>
-            })
+        if (searchInputValue !== "") {
+            return filteredData.map((element, index) => {
+                return (
+                    <tr key={index}>
+                        <DataTableRow row={element} />
+                    </tr>
+                );
+            });
         }
         // return all data
-        return this.state.data.map((element, index) => {
-            return <tr key={index}><DataTableRow row={element}/></tr>
-        })
-    }
+        return data.map((element, index) => {
+            return (
+                <tr key={index}>
+                    <DataTableRow row={element} />
+                </tr>
+            );
+        });
+    };
 
-    handleInputChange(searchInputValue) {
-        this.setState({ searchInputValue })
-        this.handleSearch(searchInputValue)
-    }
+    const handleInputChange = (searchInputValue) => {
+        setSearchInputValue(searchInputValue);
+        handleSearch(searchInputValue);
+    };
 
-    handleSearch(searchInput) {
+    const handleSearch = (searchInput) => {
         if (searchInput.length > 0) {
-            const filtered = this.state.data.filter((row) => {
-                const lc = row.country.toLowerCase()
-                const filter = searchInput.toLowerCase()
-                if (searchInput.length < 2)
-                    return lc.startsWith(filter);
-                else
-                    return lc.includes(filter);
-            })
-            this.setState({ filteredData: filtered })
+            const filtered = data.filter((row) => {
+                const lc = row.country.toLowerCase();
+                const filter = searchInput.toLowerCase();
+                if (searchInput.length < 2) return lc.startsWith(filter);
+                else return lc.includes(filter);
+            });
+            setFilteredData(filtered);
         }
-    }
+    };
 
-    render() {
-        return (
-            <div className="stats">
-                <h3 className="stats-title">Countries affected by Covid-19</h3>
-                <Search handleSearchChange={this.handleInputChange} inputValue={this.state.searchInputValue}/>
-                <table className="stats-table sortable">
-                    <thead>
-                        <tr>
-                            <th onClick={() => {
-                                this.getSortedDataBy(null)
-                            }}>Country</th>
-                            <th onClick={() =>
-                                this.getSortedDataBy('cases')
-                            }>Total Cases</th>
-                            <th onClick={() =>
-                                this.getSortedDataBy('todayCases')
-                            }>New Cases</th>
-                            <th onClick={() =>
-                                this.getSortedDataBy('deaths')
-                            }>Total Deaths</th>
-                            <th onClick={() =>
-                                this.getSortedDataBy('todayDeaths')
-                            }>New Deaths</th>
-                            <th onClick={() => {
-                                this.getSortedDataBy('recovered')
-                            }}>Total Recovered</th>
-                            <th onClick={() => {
-                                this.getSortedDataBy('tests')
-                            }}>Total Tests</th>
-                        </tr>
-                    </thead>
+    const stableSetIsFetching = useCallback(setIsFetching, []);
+    const stableGetSortedDataBy = useCallback(getSortedDataBy, []);
+
+    useEffect(() => {
+        stableSetIsFetching(true);
+        stableGetSortedDataBy("cases");
+    }, [stableSetIsFetching, stableGetSortedDataBy]);
+
+    return (
+        <div className="stats">
+            <h3 className="stats-title">Countries affected by Covid-19</h3>
+            <Search
+                handleSearchChange={handleInputChange}
+                inputValue={searchInputValue}
+            />
+            <table className="stats-table sortable">
+                <thead>
+                    <tr>
+                        <th onClick={() => getSortedDataBy(null)}>Country</th>
+                        <th onClick={() => getSortedDataBy("cases")}>
+                            Total Cases
+                        </th>
+                        <th onClick={() => getSortedDataBy("todayCases")}>
+                            New Cases
+                        </th>
+                        <th onClick={() => getSortedDataBy("deaths")}>
+                            Total Deaths
+                        </th>
+                        <th onClick={() => getSortedDataBy("todayDeaths")}>
+                            New Deaths
+                        </th>
+                        <th onClick={() => getSortedDataBy("recovered")}>
+                            Total Recovered
+                        </th>
+                        <th onClick={() => getSortedDataBy("tests")}>
+                            Total Tests
+                        </th>
+                    </tr>
+                </thead>
                 <tbody>
-                    {this.state.isFetching ?
-                        <tr><td>Loading</td></tr> :
-                        this.addRows()}
+                    {isFetching ? 
+                    <tr><td>Loading</td></tr> :
+                    addRows()}
                 </tbody>
-                </table>
-            </div>
-        )
-    }
-}
+            </table>
+        </div>
+    );
+};
 
-export default DataTable
+export default DataTable;
