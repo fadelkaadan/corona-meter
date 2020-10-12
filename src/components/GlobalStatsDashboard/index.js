@@ -1,2 +1,2 @@
-import GlobalStatsDashboard from './GlobalStatsDashboard'
-export default GlobalStatsDashboard
+import GlobalStatsDashboard from "./GlobalStatsDashboard";
+export default GlobalStatsDashboard;
