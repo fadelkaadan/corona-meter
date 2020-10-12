@@ -9,22 +9,24 @@ const GlobalStatsDashboard = () => {
 
     useEffect(() => {
         fetchGlobalData().then((response) => {
-            setData(response);
-        });
+            setData(response.data);
+        })
     }, []);
 
-    const { cases, deaths, recovered } = data;
+    if (!data) {
+        return null
+    }
 
     return (
         <div className="global-stats-dashboard">
-            <StatsBox counterName="Total Cases" count={numberFormater(cases)} />
+            <StatsBox counterName="Total Cases" count={numberFormater(data.cases)} />
             <StatsBox
                 counterName="Total Deaths"
-                count={numberFormater(deaths)}
+                count={numberFormater(data.deaths)}
             />
             <StatsBox
                 counterName="Total Recovered"
-                count={numberFormater(recovered)}
+                count={numberFormater(data.recovered)}
             />
         </div>
     );

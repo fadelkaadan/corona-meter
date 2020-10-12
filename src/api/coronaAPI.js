@@ -1,10 +1,11 @@
-const { NovelCovid } = require('novelcovid');
-const track = new NovelCovid();
+import axios from "axios";
+
+const BASE_URL = "https://disease.sh/v3/covid-19";
 
 export const fetchGlobalData = () => {
-    return track.all();
-}
+    return axios.get(`${BASE_URL}/all`)
+};
 
 export const fetchCountriesDataBy = (preference) => {
-    return track.countries(null, preference);
-}
+    return axios.get(`${BASE_URL}/countries/?sort=${preference}`)
+};

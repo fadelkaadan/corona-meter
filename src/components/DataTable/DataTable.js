@@ -14,7 +14,7 @@ const DataTable = () => {
         fetchCountriesDataBy(preference)
             .then((response) => {
                 setIsFetching(false);
-                setData(response);
+                setData(response.data);
             })
             .then(() => {
                 setFilteredData(data);
@@ -99,9 +99,13 @@ const DataTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {isFetching ? 
-                    <tr><td>Loading</td></tr> :
-                    addRows()}
+                    {isFetching ? (
+                        <tr>
+                            <td>Loading</td>
+                        </tr>
+                    ) : (
+                        addRows()
+                    )}
                 </tbody>
             </table>
         </div>
