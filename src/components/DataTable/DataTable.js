@@ -36,7 +36,7 @@ const DataTable = () => {
         return data.map((element, index) => {
             return (
                 <tr key={index}>
-                    <DataTableRow row={element} />
+                    <DataTableRow row={element} rowNr={index + 1} />
                 </tr>
             );
         });
@@ -77,24 +77,21 @@ const DataTable = () => {
             <table className="stats-table sortable">
                 <thead>
                     <tr>
-                        <th onClick={() => getSortedDataBy(null)}>Country</th>
+                        <th>#</th>
+                        <th
+                            onClick={() => getSortedDataBy(null)}
+                            style={{ textAlign: "left" }}
+                        >
+                            Country
+                        </th>
                         <th onClick={() => getSortedDataBy("cases")}>
                             Total Cases
-                        </th>
-                        <th onClick={() => getSortedDataBy("todayCases")}>
-                            New Cases
                         </th>
                         <th onClick={() => getSortedDataBy("deaths")}>
                             Total Deaths
                         </th>
-                        <th onClick={() => getSortedDataBy("todayDeaths")}>
-                            New Deaths
-                        </th>
                         <th onClick={() => getSortedDataBy("recovered")}>
                             Total Recovered
-                        </th>
-                        <th onClick={() => getSortedDataBy("tests")}>
-                            Total Tests
                         </th>
                     </tr>
                 </thead>
